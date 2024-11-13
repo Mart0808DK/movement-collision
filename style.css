@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#gamefield {
+    display: grid;
+    background-color: gray;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 2px solid green;    
+}
+
+#player {
+    position: absolute;
+    background-image: url("img/Character 4.png");
+    width: 32px;
+    height: 40px;
+    background-size: 400%;
+    background-position: 0% 0%;
+}
+
+#enemy {
+    position: absolute;
+    background-image: url("img/Character 5.png");
+    width: 32px;
+    height: 40px;
+    background-size: 400%;
+    background-position: 0% 0%;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 32px;
+    height: 40px;
+    background-color: red;
+    opacity: 0.3;
+}
+
+#enemy.collision{
+    outline: 2px solid yellow
+}
+
+#player.collision{
+    outline: 2px solid red;
+}
+
+.collision {
+    animation: flash-yellow 1s ease-in-out infinite alternate;
+}
+
+#lives {
+    position: absolute;
+    top: 560px;
+    left: 35.2%;
+}
+
+#gameover {
+    position: fixed;
+    margin: 0;
+    border: 2px solid black;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 2em;
+    padding: 20px ;
+    top: 50%;
+    left: 50%;
+    font-weight: bolder;
+    font-size: 100px;
+    transform: translate(-50%, -50%);
+}
+
+#btn-restart {
+    position: absolute;
+    cursor: pointer;
+    padding: 5px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 2em;
+    top: 89%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
