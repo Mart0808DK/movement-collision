@@ -28,6 +28,7 @@ const controls = {
 
 function init() {
     document.addEventListener("keydown", keydown);
+    document.addEventListener("keyup", keyup);
     displayLives(lives);
     requestAnimationFrame(tick);
 }
@@ -93,34 +94,46 @@ function keydown(event) {
         case "ArrowUp":
         case "w":
             controls.up = true;
-            controls.down = false;
-            controls.left = false;
-            controls.right = false;
             break;
         case "ArrowDown":
         case "s":
             controls.down = true;
-            controls.up = false;
-            controls.left = false;
-            controls.right = false;
             break;
         case "ArrowLeft":
         case "a":
             controls.left = true;
-            controls.right = false;
-            controls.up = false;
-            controls.down = false;
             break;
         case "ArrowRight":
         case "d":
             controls.right = true;
-            controls.left = false;
-            controls.up = false;
-            controls.down = false;
             break;
         default:
             break;
     }
+}
+
+function keyup(event) {
+    switch (event.key) {
+        case "ArrowUp":
+        case "w":
+            controls.up = false;
+            break;
+        case "ArrowDown":
+        case "s":
+            controls.down = false;
+            break;
+        case "ArrowLeft":
+        case "a":
+            controls.left = false;
+            break;
+        case "ArrowRight":
+        case "d":
+            controls.right = false;
+            break;
+        default:
+            break;
+    }
+    
 }
 
 function moveplayer(deltatime) {
